@@ -25,11 +25,11 @@ class Customer {
 		String result = "Rental Record for " + getName() + "\n";
 		while (rentals.hasMoreElements()) {
 			Rental each = (Rental) rentals.nextElement();
-			frequentRenterPoints += each._movie.getFrequentRenterPoints(each);
+			frequentRenterPoints += each.getMovie().getFrequentRenterPoints(each);
 
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t"
-					+ String.valueOf(each._movie.getCharge(each)) + "\n";
+					+ String.valueOf(each.getCharge()) + "\n";
 		}
 
 		// add footer lines
@@ -44,7 +44,7 @@ class Customer {
 		Enumeration rentals = _rentals.elements();
 		while (rentals.hasMoreElements()) {
 			Rental each = (Rental) rentals.nextElement();
-            result += each._movie.getCharge(each);
+            result += each.getCharge();
 		}
 		return result;
 	}
