@@ -32,4 +32,25 @@ public class Movie {
         else
             return 1;
     }
+
+    double getCharge(Rental rental) {
+        double result = 0;
+        // determine amounts for each line
+        switch (rental.getMovie().getPriceCode()) {
+            case REGULAR:
+                result += 2;
+                if (rental.getDaysRented() > 2)
+                    result += (rental.getDaysRented() - 2) * 1.5;
+                break;
+            case NEW_RELEASE:
+                result += rental.getDaysRented() * 3;
+                break;
+            case CHILDRENS:
+                result += 1.5;
+                if (rental.getDaysRented() > 3)
+                    result += (rental.getDaysRented() - 3) * 1.5;
+                break;
+        }
+        return result;
+    }
 }
