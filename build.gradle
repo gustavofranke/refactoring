@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+jar {
+    baseName = 'refactoring'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
