@@ -24,4 +24,8 @@ class Rental {
         else
             return 1;
     }
+
+    double getCharge() {
+        return _movie.getCharge(_daysRented);
+    }
 }
