@@ -25,17 +25,9 @@ public class Movie {
 		return _title;
 	}
 
-    int getFrequentRenterPoints(Rental rental) {
-        if ((rental.getMovie().getPriceCode() == NEW_RELEASE)
-                && rental.getDaysRented() > 1)
-            return 2;
-        else
-            return 1;
-    }
 
     double getCharge(Rental rental) {
         double result = 0;
-        // determine amounts for each line
         switch (rental.getMovie().getPriceCode()) {
             case REGULAR:
                 result += 2;
